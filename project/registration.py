@@ -331,16 +331,16 @@ while exit!='e':
                                 salted=bcrypt.hashpw(mot.encode(),s)
                                 print("\t\t",salted)   
                             elif choix == 'c' : 
-                                with open('alphalist.txt','r') as f:
-                                    data = f.read()
-                                Dict = ast.literal_eval(data)
-                                for i in Dict.values():
-                                    if h == i:
+                                with open('alphawordlist.lst','r') as f:
+                                    data = f.readlines()
+                                lines=[line.strip() for line in data]
+                                #print(lines)
+                                h=hashlib.sha256(maskpass.askpass('give the pwd : ').encode()).hexdigest()
+                                for i in lines:
+                                    x=hashlib.sha256(i.encode()).hexdigest()
+                                    if x==h:
                                         print(colored("password found !",'green')) 
-                                        for key,value in Dict.items():
-                                            if i==value:
-                                                print(key)  
-
+                                        print(colored(i,'green')) 
                                         found=True
                                         break
                                 if found==False:
