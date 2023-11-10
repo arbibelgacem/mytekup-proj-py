@@ -1,0 +1,9 @@
+art==6.1
+cryptography==38.0.4
+cryptography.egg==info
+maskpass==0.3.7
+pyfiglet==1.0.2
+pyfiglet==0.8.post0
+python_bcrypt==0.3.2
+rsa==4.8
+termcolor==2.3.0
